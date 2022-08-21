@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="icon" href="./images/star.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2a4c5772be.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat&family=Nunito&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <!-- <header>TODO APP</header> -->
+        <div class="inputField">
+            <input class="input" type="text" placeholder="I need to...">
+            <button><i class="fa-solid fa-circle-plus"></i></button>
+        </div>
+        <ul class="todoList">
+            <!-- Data comes from localStorage -->
+        </ul>
+        <div class="footer">
+            <span>You have <span class="pendingNumb"></span> pending tasks.</span>
+        <div class="clear-btn">
+            <button><i class="fa-solid fa-trash-can"></i>Clear All</button>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
