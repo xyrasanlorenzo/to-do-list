@@ -72,7 +72,7 @@ function showTask(){
 let newLiTag = "";
     listArr.forEach((element, index) => {
         newLiTag += `<li> ${element} 
-        <span ${index}>
+        <span (${index});>
         <p class="deleted">x</p></span>
         </li>`;
         
@@ -84,14 +84,16 @@ let newLiTag = "";
     }
     }, false);
 
+    todoList.addEventListener('click', (e) => {
+        if(e.target.classList.contains('deleted')) {
+            deleteTask();
+
+    }
+    });
+
     todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
     inputBox.value = ""; //once task added, leave the input field blank
 }
-    // todoList.addEventListener('click', (e) => {
-    //     if(e.target.classList.contains('deleted')) {
-    //         e.target.parentElement.closest.remove('deleted');
-    // }
-    // })
 
 //delete task function
 function deleteTask(index) {
