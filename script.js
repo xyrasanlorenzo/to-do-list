@@ -48,6 +48,7 @@ addBtn.onclick = () => {
     localStorage.setItem("New Todo", JSON.stringify(listArr)); //transforming js object into json string
     showTask(); //calling showTasks function
     addBtn.classList.remove("active");
+    
 }
 
 
@@ -67,13 +68,30 @@ function showTask(){
     } else{
         deleteAllBtn.classList.remove("active");
     }
-    let newLiTag = "";
+
+let newLiTag = "";
     listArr.forEach((element, index) => {
-        newLiTag += `<li> ${element} <span onclick="deleteTask(${index})";><i class="fa-solid fa-xmark"></i></span></li>`;
+        newLiTag += `<li> ${element} 
+        <span ${index}>
+        <p class="deleted">x</p></span>
+        </li>`;
+        
     });
+    
+    todoList.addEventListener('click', (e) => {
+        if(e.target.tagName ==='LI') {
+            e.target.classList.toggle('checked');
+    }
+    }, false);
+
     todoList.innerHTML = newLiTag; //adding new li tag inside ul tag
     inputBox.value = ""; //once task added, leave the input field blank
 }
+    // todoList.addEventListener('click', (e) => {
+    //     if(e.target.classList.contains('deleted')) {
+    //         e.target.parentElement.closest.remove('deleted');
+    // }
+    // })
 
 //delete task function
 function deleteTask(index) {
